@@ -1,0 +1,380 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e1e9e8;
+    color: #9e9ea4;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .material-icons-outlined {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 35px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'sidebar header header header'
+      'sidebar main main main';
+    height: 100vh;
+  }
+  
+  /* ---------- HEADER ---------- */
+  .header {
+    grid-area: header;
+    height: 60px;
+    display: flex;
+    max-width:100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 0px;
+    background-color: #1d2634;
+    color: white;
+    box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  /* ---------- SIDEBAR ---------- */
+  
+  #sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    width: 200px;
+    background-color: #263043;
+    overflow-y: auto;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+  
+  }
+  
+  .sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 30px 30px;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar-title > span {
+    display: none;
+  }
+  
+  .sidebar-brand {
+    color: aliceblue;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 700;
+  
+  }
+  
+  .sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+    
+  }
+  
+  .sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+  
+  }
+  
+  .sidebar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+  
+  .sidebar-list-item > a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+    /*
+      the z-index of the ApexCharts is 11
+      we want the z-index of the sidebar higher so that
+      the charts are not showing over the sidebar 
+      on small screens
+    */
+    z-index: 12 !important;
+  }
+  
+  /* ---------- MAIN ---------- */
+  
+  .main-container {
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .main-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    border-radius: 5px;
+  }
+  
+  .card:first-child {
+    background-color: #2962ff;
+  }
+  
+  .card:nth-child(2) {
+    background-color: #ff6d00;
+  }
+  
+  .card:nth-child(3) {
+    background-color: #2e7d32;
+  }
+  
+  .card:nth-child(4) {
+    background-color: #d50000;
+  }
+  
+  .card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-inner > .material-icons-outlined {
+    font-size: 45px;
+  }
+  
+  .charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 60px;
+  }
+  
+  .charts-card {
+    background-color: #263043;
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chart-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ---------- MEDIA QUERIES ---------- */
+  
+  /* Medium <= 992px */
+  
+  @media screen and (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 3fr;
+      grid-template-areas:
+        'header'
+        'main';
+    }
+  
+    #sidebar {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: inline;
+    }
+  
+    .sidebar-title > span {
+      display: inline;
+    }
+  }
+  
+  /* Small <= 768px */
+  
+  @media screen and (max-width: 768px) {
+    .main-cards {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+  
+    .charts {
+      grid-template-columns: 1fr;
+      margin-top: 30px;
+    }
+  }
+  
+  /* Extra Small <= 576px */
+  
+  @media screen and (max-width: 576px) {
+    .hedaer-left {
+      display: none;
+    }
+  }
+
+
+/* Center the container */
+/* Center the container */
+
+
+.container{
+    grid-area: main;
+    overflow-y: auto;
+    margin-top: 50px;}
+  
+  
+  /* Style the search form */
+  .data_search {
+    text-align: center;
+    grid-area: main;
+    overflow-y: auto;
+    margin-bottom: 50px;
+    margin-right: 150px;
+}
+  
+  /* Style the input and button inside the form */
+  .data_search input[type="text"] {
+    padding: 7px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    grid-area: main;
+    overflow-y: auto;
+  }
+  
+  
+  .data_search .search_btn {
+  
+    background-color: #122436;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    grid-area: main;
+    overflow-y: auto;
+    padding: 7px 6px;
+  }
+  
+  
+  /* Adjust the spacing between the input and button */
+  .data_search form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    grid-area: main;
+    overflow-y: auto;
+  }
+  
+  .data_search input[type="text"] {
+    margin-right: 10px;
+  }
+  
+  /* Style the label */
+  .data_search label {
+    font-weight: bold;
+  }
+  
+
+<!--------------------end search --------------------->
+
+ 
+ /* Basic table styling */
+ .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+/* Table header styling */
+.table thead th {
+    background-color:#173d3d;
+    color:white;
+}
+
+/* Alternate row colors for better readability */
+.table tbody tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.right-dropdown {
+    grid-area: main;
+    overflow-y: auto;
+    flex: 1;
+    text-align: right;
+    margin-top: 100px;
+    text-align: center;
+}
+/* Style the select dropdowns */
+select {
+  grid-area: main;
+    overflow-y: auto;
+
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+
+
+
+.container{
+grid-area: main;
+overflow-y: auto;}
+
+
+
+.dropdown{
+
+text-align: center;
+margin-right: 200px;
+margin-top: 80px;
+
+}
+          
+  
+
+
+
+
+
+.dropdown{
+
+text-align: center;
+margin-right: 200px;
+margin-top: 80px;
+
+}

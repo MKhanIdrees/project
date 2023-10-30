@@ -1,0 +1,67 @@
+/* Add a smaller form design */
+
+/* Body styles */
+.body {
+ 
+  background-color: rgb(12, 39, 30);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+/* Form container */
+
+h3{
+  color: #920c0c;
+  text-align: center;
+}
+
+/* Input styles */
+label {
+  font-weight: bold;
+}
+
+/* Style for form input fields */
+.form-control {
+  width: 100%;
+ margin-top: 5px;
+ margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+ 
+}
+
+
+/* Button styles */
+#btn{
+  background-color: rgb(146, 20, 20);
+  color: #fff;
+  border: none;
+  margin-top: 5px;
+  border-radius: 10px;
+  padding: 8px 16px; /* Reduce padding for a smaller button */
+  cursor: pointer;
+  font-size: 16px; /* Reduce font size for a smaller button */
+  transition: background-color 0.3s ease-in-out;
+}
+
+#btn:hover {
+  background-color: rgb(0, 90, 160);
+}
+
+/* Alert styles */
+.alert {
+  margin-top: 15px; /* Reduce top margin for alerts */
+  text-align: center;
+  color: rgb(0, 120, 215);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+}
