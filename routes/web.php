@@ -5,6 +5,7 @@ use App\http\Controllers\WidowsController;
 use App\http\Controllers\ShopkeeperController;
 use App\http\Controllers\ItemsController;
 use App\http\Controllers\RashansController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,10 @@ use App\http\Controllers\RashansController;
 |
 */
 
-Route::get('/', [WidowsController::class,'index']);
+Route::get('/{any}', function () {
+    return view('welcome');
+})->where("any", ".*");
+
 
 Route::post('widows/store', [WidowsController::class,'store']);
 
@@ -50,10 +54,13 @@ Route::put('/shopkeepers/{id}/update',[ShopkeeperController::class,'update']);
 Route::get('/foods/create', [ItemsController::class,'create']);
 Route::post('foods/store', [ItemsController::class, 'store']);
 Route::get('foods/show', [ItemsController::class, 'show']);
-Route::get('/foods/{id}/edit',[ItemsController::class, 'edit']); 
-Route::put('/foods/{id}/update',[ItemsController::class, 'update']); 
+Route::get('/foods/{id}/edit',[ItemsController::class, 'edit']);
+Route::put('/foods/{id}/update',[ItemsController::class, 'update']);
 Route::delete('/foods/{id}/delete',[ItemsController::class,'destroy']);
 
-// rashans 
+// rashans
 Route::get('/rashans/rashan', [RashansController::class,'rashan']);
 Route::post('rashans/store', [RashansController::class, 'store']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

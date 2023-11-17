@@ -1,5 +1,5 @@
-<!DOCTYPE html>  
-<html lang="en"> 
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<link rel="stylesheet" href="home.css">
 	<meta charset="utf-8">
@@ -13,12 +13,12 @@
 
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
- 
+
 <title></title>
 </head>
 <body>
 
-<!----------------------------------------------navbar start--------------------------------------------------->	
+<!----------------------------------------------navbar start--------------------------------------------------->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar_color">
   <div class="container-fluid">
@@ -50,7 +50,7 @@
 </nav>
 
 <!------------------------------------------------------ navbar End----------------------------------------------------------------------->
- 
+
 <!-------------------------------------------------------Carousel----------------------------------------------------------------------->
 
  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -63,37 +63,37 @@
     <div class="carousel-item active">
       <img src="/user_image/a.AVIF" class="d-block w-100 " alt="...">
       <div class="carousel-caption d-none d-md-block">
-      	
+
         <h5 class="text-area"><b>Heling Hands For Orphans And Widows</b></h5>
 
-        
-        <div class="sliderbtn"> 
+
+        <div class="sliderbtn">
     	<a class="btn btn-primary" href="#" role="button">Submit Information</a>
     	<a class="btn btn-primary" href="#" role="button">Read More</a>
     </div>
 </div>
       </div>
-  
 
- 
+
+
     <div class="carousel-item">
       <img src="/user_image/sliderpic2.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5 class="text-area"> <b>Heling Hands For Orphans And Windows </b></h5>
-        <div class="sliderbtn"> 
+        <div class="sliderbtn">
     	<a class="btn btn-primary" href="#" role="button">Submit Information</a>
     	<a class="btn btn-primary" href="#" role="button">Read More</a>
     </div>
       </div>
     </div>
 
-    
+
 
     <div class="carousel-item">
       <img src="/user_image/sliderpic3.jpg" class="d-block w-100 h-50" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5 class="text-area"> <b>Heling Hands For Orphans And Windows </b></h5>
-        <div class="sliderbtn"> 
+        <div class="sliderbtn">
     	<a class="btn btn-primary" href="#" role="button">Submit Information</a>
     	<a class="btn btn-primary" href="#" role="button">Read More</a>
     </div>
@@ -112,7 +112,7 @@
 </div>
 
 <!------------------------------------------carousel End--------------------------------------------->
-    
+
 <!--------------------------------------------Cards start----------------------------------------------------------->
 <div class="card-div">
 <section class="articles">
@@ -183,7 +183,7 @@
 <!--------------------------------------------------section mission--------------------------------------------------------------------->
 
 <div class="clearfix mission-div">
-  
+
 
 <img src="/user_image/mission.jpg" class="col-md-6 float-md-end mb-3 ms-md-3 img-mission" alt="...">
 <h3 class="mission-h3 fa-fade"> <i class="fa-regular fa-heart fa-flip"></i></i> MISSION AND GOALS</h3>
@@ -243,7 +243,7 @@ valueDisplays.forEach((valueDisplay) => {
     }
   }, duration);
 });</script>
- 
+
 
 <!-----------------------------------------------count section End------------------------------------------------------>
 
@@ -316,18 +316,18 @@ valueDisplays.forEach((valueDisplay) => {
     <h1><b>Meet With Our<h2 style="color:red; display: inline;"><b> Awesome </b></h2> <br> Volunteers <b></h1>
   </div>
 <div class="Volunteer-container">
-	 
+
       <div class="volunteer-box">
       <div class="image">
         <img src="/user_image/v.jpg">
         </div>
         <div class="name_job">David Chrish</div>
-      
+
       <h2>Volunteer </h2>
 
         <div class="volunteer-btns">
           <button>Contact</button>
-          
+
         </div>
       </div>
       <div class="volunteer-box">
@@ -337,10 +337,10 @@ valueDisplays.forEach((valueDisplay) => {
         <div class="name_job">Kristina Bellis</div>
       <h2>Volunteer </h2>
 
-        
+
         <div class="volunteer-btns">
           <button>Read More </button>
-          
+
         </div>
       </div>
       <div class="volunteer-box">
@@ -348,12 +348,12 @@ valueDisplays.forEach((valueDisplay) => {
          <img src="/user_image/v3.jpeg" alt="">
         </div>
         <div class="name_job">Kristina Bellis</div>
-        
+
       <h2>Volunteer </h2>
 
         <div class="volunteer-btns">
           <button>Read More</button>
-         
+
         </div>
       </div>
 
@@ -362,25 +362,25 @@ valueDisplays.forEach((valueDisplay) => {
         <img src="/user_image/v4.jpg" alt="">
         </div>
         <div class="name_job">Kristina Bellis</div>
-      
+
         <h2>Volunteer </h2>
 
         <div class="volunteer-btns">
           <button>Read More </button>
-          
+
         </div>
       </div>
     </div>
 
-<!---------------------------------------------Volunteer section End-------------------------------------------> 
+<!---------------------------------------------Volunteer section End------------------------------------------->
 
 
 
 
 </body>
 
-<!----------------------------------------------footer section----------------------------------------------->   
- 
+<!----------------------------------------------footer section----------------------------------------------->
+
 <footer class="footer-distributed">
 
         <div class="footer-left">
@@ -434,6 +434,6 @@ valueDisplays.forEach((valueDisplay) => {
     </footer>
 
 
-    
+
 
 </html>

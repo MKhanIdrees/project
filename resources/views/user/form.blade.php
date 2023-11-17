@@ -26,7 +26,7 @@
   </head>
   <body>
 
-  <!----------------------------------------------navbar start--------------------------------------------------->	
+  <!----------------------------------------------navbar start--------------------------------------------------->
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar_color">
@@ -43,7 +43,7 @@
         <li class="nav-item">
           <a class="nav-link" href="about">About Us</a>
         </li>
-       
+
           <li class="nav-item">
           <a class="nav-link" href="form">Form</a>
         </li>
@@ -70,54 +70,54 @@
         @csrf
         <h2>Personal information</h2>
         <div class="input-box">
-          
+
         <div class="column">
           <div class="input-box">
           <label>widow full Name :</label>
             <input type="text" placeholder="Enter widow name" name="widow_name"  value="{{old('widow_name')}}" required />
              @if($errors->has('widow_name'))
-            <span class="text-danger">{{ $errors->first('widow_name')}} 
+            <span class="text-danger">{{ $errors->first('widow_name')}}
         @endif
           </div>
           <div class="input-box">
             <label>husband Name</label>
             <input type="text" placeholder="Enter husband name" name="husband_name" value="{{old('husband_name')}}" required />
             @if($errors->has('husband_name'))
-            <span class="text-danger">{{ $errors->first('husband_name')}} 
+            <span class="text-danger">{{ $errors->first('husband_name')}}
         @endif
           </div>
       <div class="input-box">
             <label>Contact No :</label>
             <input type="number" placeholder="Enter phone number" name="widow_contact" value="{{old('widow_contact')}}" required />
             @if($errors->has('widow_contact'))
-            <span class="text-danger">{{ $errors->first('widow_contact')}} 
+            <span class="text-danger">{{ $errors->first('widow_contact')}}
         @endif
           </div>
         </div>
         <br>
 
          <div class="input-box">
-          
+
         <div class="column">
           <div class="input-box">
             <label>Widow NIC No :</label>
             <input type="number" placeholder="Enter widow name" name="widow_nic" value="{{old('widow_nic')}}" />
             @if($errors->has('widow_contact'))
-            <span class="text-danger">{{ $errors->first('widow_contact')}} 
+            <span class="text-danger">{{ $errors->first('widow_contact')}}
         @endif
           </div>
           <div class="input-box">
             <label>Husband NIC No :</label>
             <input type="number" placeholder="Enter husband name" name="husband_nic" value="{{old('husband_nic')}}" />
             @if($errors->has('widow_contact'))
-            <span class="text-danger">{{ $errors->first('widow_contact')}} 
+            <span class="text-danger">{{ $errors->first('widow_contact')}}
         @endif
           </div>
       <div class="input-box">
             <label>email :</label>
             <input type="email" placeholder="Enter phone number" name="email" value="{{old('email')}}" />
             @if($errors->has('widow_contact'))
-            <span class="text-danger">{{ $errors->first('widow_contact')}} 
+            <span class="text-danger">{{ $errors->first('widow_contact')}}
         @endif
           </div>
         </div>
@@ -133,11 +133,11 @@
         </div>
 
 
-        
+
 <br><br>
   <h2>Guardian information</h2>
         <div class="input-box">
-          
+
         <div class="column">
           <div class="input-box">
             <label>Guardian full Name :</label>
@@ -155,7 +155,7 @@
 <br><br>
         <h2>Guardian information</h2>
          <div class="input-box">
-          
+
           <label for="kids">how many kids</label>
           <br>
   <div class="select-box">
@@ -171,9 +171,9 @@
 
   <label for="myfile">Form B all kids:</label>
   <input type="file" name="form_b"  accept="image/*">
-          
+
         </div>
-        
+
         <br><br>
         <h2>Address</h2>
         <div class="input-box address">

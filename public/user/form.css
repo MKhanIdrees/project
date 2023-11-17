@@ -7,7 +7,7 @@ body{
 	margin:0px;
 	padding:0px;
 	list-style:none;
-	
+
 	background:linear-gradient(to bottom, #33ccff 0%, #003300 91%);
 
 }
@@ -17,12 +17,11 @@ body{
 	margin-right:20px;
 	font-size: 15px;
     font-weight: 600;
-    
+
 }
 
 
 /* Import Google font - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 * {
     margin: 0;
@@ -36,7 +35,7 @@ body{
     max-width: 900px;
     width: 100%;
     background: #ececec;
-   
+
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
@@ -54,7 +53,7 @@ body{
 
 .form .input-box {
     width: 100%;
-    
+
 }
 
 .input-box label {

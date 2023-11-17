@@ -31,7 +31,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
             'role' => 'required',
         ]);
@@ -41,8 +41,15 @@ class AuthController extends Controller
         } else if ($request->role != 'admin') {
             return response()->json(['errors' => "You are not allowed"], 422); // Return validation errors
         }
-        return $this->CheckLogin($request);
-    }
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'role' => $request->role,
+        ]);
+
+        return response()->json(['message' => 'Registration successful', 'user' => $user], 201);
+     }
 
 
 

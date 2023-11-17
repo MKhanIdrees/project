@@ -1,5 +1,5 @@
-<!DOCTYPE html>  
-<html lang="en"> 
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <link rel="stylesheet" href="gallery.css">
   <meta charset="utf-8">
@@ -13,12 +13,12 @@
 
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
- 
+
 <title></title>
 </head>
 <body>
 
-<!----------------------------------------------navbar start--------------------------------------------------->  
+<!----------------------------------------------navbar start--------------------------------------------------->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar_color">
   <div class="container-fluid">
@@ -80,8 +80,8 @@
 
 </body>
 
-<!----------------------------------------------footer section----------------------------------------------->   
- 
+<!----------------------------------------------footer section----------------------------------------------->
+
 <footer class="footer-distributed">
 
         <div class="footer-left">
@@ -135,6 +135,6 @@
     </footer>
 
 
-    
+
 
 </html>

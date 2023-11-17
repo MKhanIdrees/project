@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\APIController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,4 +32,9 @@ Route::post('register-shopkeeper', [AuthController::class, 'registerShop']);
 // Protected routes
 Route::group(['middleware' => ['jwt.auth']], function () {
     Route::get('user', [AuthController::class, 'checkToken']);
+    Route::post('add-widows', [APIController::class, 'WidowAddstore']);
+    Route::get('get-widows', [APIController::class, 'WidowAll']);
+    Route::get('get-widows/{id}', [APIController::class, 'WidowSingle']);
+    Route::delete('delete-widows/{id}', [APIController::class, 'WidowDelet']);
+    Route::post('update-widows/{id}', [APIController::class, 'WidowUpdate']);
 });
