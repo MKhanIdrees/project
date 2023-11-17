@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Widow; // Assuming your model is named Widow with a capital 'W'
 use DB;
+use Illuminate\Support\Facades\DB as FacadesDB;
 use PDF;
 
 
@@ -52,7 +53,7 @@ class WidowsController extends Controller
     public function search_data(Request $request)
     {
         $data = $request->input('search');
-        $widows = DB::table('widows')->where('widow_name', 'like', '%' . $data . '%')->get();
+        $widows = FacadesDB::table('widows')->where('widow_name', 'like', '%' . $data . '%')->get();
         return view('widows.index', compact('widows'));
     }
 

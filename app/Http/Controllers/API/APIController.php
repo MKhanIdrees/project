@@ -97,12 +97,12 @@ class APIController extends Controller
     public function WidowSingle($id)
     {
         $deleted = widow::where('id', $id)->first();
-       return $this->ResponseData($deleted);
+        return $this->ResponseData($deleted);
     }
     public function WidowDelet($id)
     {
         $deleted = widow::where('id', $id)->delete();
-       return $this->ResponseData($deleted);
+        return $this->ResponseData($deleted);
     }
     public function WidowUpdate(Request $request, $id)
     {
@@ -182,6 +182,11 @@ class APIController extends Controller
                 'message' => "Updated Successfully",
             ]);
         }
+    }
+    public function Widowsearch(Request $request)
+    {
+        $data = $request->input('search');
+        return widow::where('widow_name', 'like', '%' . $data . '%')->first();
     }
 
 
