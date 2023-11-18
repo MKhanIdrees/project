@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('shopkeeper_district',20);
             $table->string('shopkeeper_tehsil',20);
             $table->string('shopkeeper_village',20);
-           
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

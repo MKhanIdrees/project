@@ -24,7 +24,6 @@ Route::get('/{any}', function () {
 
 
 Route::post('widows/store', [WidowsController::class,'store']);
-
 Route::get('widows/{id}/edit',[WidowsController::class,'edit']);
 Route::put('widows/{id}/update',[WidowsController::class,'update']);
 Route::delete('widows/{id}/delete',[WidowsController::class,'destroy']);

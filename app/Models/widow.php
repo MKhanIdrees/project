@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class widow extends Model
 {
     use HasFactory;
+
+
 }

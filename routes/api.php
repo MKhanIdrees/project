@@ -39,4 +39,13 @@ Route::group(['middleware' => ['jwt.auth']], function () {
     Route::delete('delete-widows/{id}', [APIController::class, 'WidowDelet']);
     Route::post('update-widows/{id}', [APIController::class, 'WidowUpdate']);
     Route::get('search-widows', [APIController::class, 'Widowsearch']);
+
+    //Shoopkeeper
+    Route::post('add-shopkeeper', [APIController::class, 'ShoopkeeperAdd']);
+    Route::get('get-shopkeeper', [APIController::class, 'ShoopkeeperAll']);
+    Route::get('get-shopkeeper/{id}', [APIController::class, 'ShoopkeeperSingle']);
+    Route::delete('delete-shopkeeper/{id}', [APIController::class, 'Shoopkeeperdelete']);
+    Route::post('update-shopkeeper/{id}', [APIController::class, 'Shoopkeeperupdate']);
+    Route::get('search-shopkeeper', [APIController::class, 'Shoopkeepersearch']);
+
 });

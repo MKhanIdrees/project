@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\API\APIController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,7 +50,7 @@ class AuthController extends Controller
         ]);
 
         return response()->json(['message' => 'Registration successful', 'user' => $user], 201);
-     }
+    }
 
 
 
@@ -92,9 +93,22 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
-            'role' => 'required',
+            'email' => 'required',
+            'husband_name' => 'required',
+            'widow_contact' => 'required|integer',
+            'widow_nic' => 'required|integer',
+            'husband_nic' => 'required|integer',
+            'Certificate' => 'required',
+            'affidavit' => 'required',
+            'guardian_name' => 'required',
+            'relationship' => 'required',
+            'guardian_contact' => 'required|integer',
+            'kids' => 'required',
+            'form_b' => 'required',
+            'widow_district' => 'required',
+            'widow_tehsil' => 'required',
+            'widow_village' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -109,8 +123,10 @@ class AuthController extends Controller
             'role' => $request->role,
         ]);
 
+        APIController::WidowAddstore($request, $user);
         return response()->json(['message' => 'Registration successful', 'user' => $user], 201);
     }
+
     public function registerShop(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -118,6 +134,11 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
             'role' => 'required',
+            'shop_name' => 'required',
+            'shopkeeper_contact' => 'required|integer',
+            'shopkeeper_district' => 'required',
+            'shopkeeper_tehsil' => 'required',
+            'shopkeeper_village' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -131,9 +152,8 @@ class AuthController extends Controller
             'password' => bcrypt($request->password),
             'role' => $request->role, // Assuming 'role' is another field in your User model
         ]);
-
+        APIController::ShoopkeeperAdd($request,$user);
         return response()->json(['message' => 'Registration successful', 'user' => $user], 201);
-        return $this->register($request);
     }
 
     public function CheckLogin(Request $request)

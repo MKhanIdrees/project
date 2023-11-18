@@ -29,6 +29,8 @@ return new class extends Migration
             $table->string('widow_district',20);
             $table->string('widow_tehsil',20);
             $table->string('widow_village',20);
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

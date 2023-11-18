@@ -10,5 +10,6 @@ class items extends Model
     use HasFactory;
     protected $fillable = [
         'foods_name',
+        'qty',
     ];
 }
