@@ -11,5 +11,6 @@ class items extends Model
     protected $fillable = [
         'foods_name',
         'qty',
+        'user_id',
     ];
 }

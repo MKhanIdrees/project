@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('foods_name',125);
             $table->string('qty',125);
+            $table->string('user_id',125);
             $table->timestamps();
         });
     }
