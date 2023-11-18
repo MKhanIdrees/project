@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('shopkeepers_id')->references('id')->on('shopkeepers');
             $table->unsignedBigInteger('items_id');
             $table->foreign('items_id')->references('id')->on('items');
+            $table->string('qty',125);
             $table->timestamps();
         });
     }
