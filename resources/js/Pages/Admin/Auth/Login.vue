@@ -3,9 +3,17 @@
         <div class="container">
             <h1 class="title">Fastroware</h1>
             <div class="card">
-                <form>
-                    <input type="text" placeholder="Username" />
-                    <input type="password" placeholder="Password" />
+                <form @submit.prevent="login">
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        v-model="formData.email"
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        v-model="formData.password"
+                    />
                     <div class="buttons">
                         <button type="submit" class="login-button">
                             Login
@@ -18,7 +26,79 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+import { mapActions } from "vuex";
+import Swal from "sweetalert2";
+
+export default {
+    data() {
+        return {
+            formData: {
+                email: "",
+                password: "",
+                role: "admin",
+            },
+        };
+    },
+    mounted() {
+        const token = localStorage.getItem("token");
+        const user = localStorage.getItem("user");
+        this.setToken(token);
+        this.setUser(user);
+        this.fetchUserData();
+    },
+    methods: {
+        ...mapActions("auth", ["setToken", "setUser"]), // Map the 'login' action from 'auth' module
+        async login() {
+            try {
+                const response = await axios.post(
+                    "/api/login-admin",
+                    this.formData
+                );
+                const token = response.data.token;
+                const user = response.data.user;
+                this.setToken(token);
+                this.setUser(user);
+                localStorage.setItem("token", token);
+                localStorage.setItem("user", JSON.stringify(user));
+                Swal.fire({
+                    icon: "success",
+                    title: "Login Successful!",
+                    text: `Welcome back, ${user.name}!`,
+                    confirmButtonText: "Go to Dashboard", // Customizing the confirm button text
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.$router.push("/auth/home");
+                    }
+                });
+            } catch (error) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: error.response.data.error,
+                });
+            }
+        },
+
+        async fetchUserData() {
+            try {
+                const token = this.$store.state.auth.token; // Assuming token is stored in Vuex state
+                const response = await axios.get("/api/user", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                if(response.status==200){
+                    this.$router.push("/auth/home");
+                }else{
+                    this.$router.push("/login");
+                }
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+            }
+        },
+    },
+};
 </script>
 
 <style scoped>
